@@ -1,7 +1,83 @@
-<h1>{{ nama_aplikasi }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ nama_aplikasi }}</title>
+    <style>
+        /* Reset some basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<h5>Made by: </h5>
-<p>{{ nama_pembuat }}<p>
-<h5>Kelas: </h5>
-<p>{{ kelas }}<p>
+        /* Main body styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
+        /* Container styling */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>{{ nama_aplikasi }}</h1>
+
+        <h5>Made by:</h5>
+        <p>{{ nama_pembuat }}</p>
+
+        <h5>Kelas:</h5>
+        <p>{{ kelas }}</p>
+    </div>
+
+</body>
+</html>
