@@ -25,6 +25,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
+            position: relative;
         }
 
         /* Adding an overlay effect to darken the background image */
@@ -46,7 +47,7 @@
             border-radius: 20px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             max-width: 700px;
-            width: 80%;
+            width: 90%;
             text-align: center;
             border: 3px solid #4CAF50;
             position: relative;
@@ -72,6 +73,55 @@
             font-size: 1.2rem;
             color: #666;
             margin-top: 10px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #d9534f;
+            margin-top: 10px;
+        }
+
+        .deskripsi {
+            font-size: 1rem; /* Smaller font size for the description */
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .mango-image {
+            margin: 20px 0;
+            border-radius: 10px;
+            max-width: 100%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .sweetness {
+            font-size: 1.2rem;
+            color: #333;
+            margin-top: 20px;
         }
 
         /* Animation */
@@ -109,6 +159,33 @@
 
         <h5>Kelas:</h5>
         <p>{{ kelas }}</p>
+
+        <!-- Mango Image -->
+        <img class="mango-image" src="https://www.astronauts.id/blog/wp-content/uploads/2023/04/Manfaat-Kesehatan-Buah-Mangga-yang-Mungkin-Belum-Kamu-Ketahui.jpg" alt="Mango">
+
+        <h5>Harga:</h5>
+        <p class="price">{{ harga }}</p>
+
+        <h5>Deskripsi:</h5>
+        <p class="deskripsi">{{ deskripsi }}</p>
+
+        <!-- Nutrition Table -->
+        <h5>Nutrition Facts</h5>
+        <table>
+            <tr>
+                <th>Nutrient</th>
+                <th>Amount</th>
+            </tr>
+            {% for key, value in nutrisi.items %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <!-- Sweetness Rating -->
+        <p class="sweetness">Tingkat Kemanisan: {{ tingkat_kemanisan }}</p>
     </div>
 
 </body>
