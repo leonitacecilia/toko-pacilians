@@ -1,4 +1,4 @@
-TUGAS 2 PBP
+TUGAS 2 Pemograman Berbasis Platform (PBP)
 
 Nama: Leonita Cecilia
 NPM: 2306165710
