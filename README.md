@@ -1,4 +1,4 @@
-TUGAS 4 Pemograman Berbasis Platform (PBP)
+TUGAS 5 Pemograman Berbasis Platform (PBP)
 
 Nama: Leonita Cecilia
 NPM: 2306165710
@@ -8,22 +8,35 @@ Kode Asdos: RZ
 Tautan menuju PWS: http://pbp.cs.ui.ac.id/leonita.cecilia/tokopacilians
 
 Jawaban Pertanyaan:
-1. Apa perbedaan antara HttpResponseRedirect() dan redirect()
-Fungsi HttpResponseRedirect() mengarahkan user ke URL yang dimasukkan dalam tanda kurung dan hanya dapat diisi oleh URL, sedangkan fungsi Redirect() mampu mengarahkan user ke berbagai jenis input (tidak hanya terbatas pada URL), seperti view names dan object.
+1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+Urutan prioritas pengambilan CSS selector dari yang paling tinggi hingga paling rendah adalah:
+(1) ID Selector. Hal ini dikarenakan ID selector bersifat unik, lebih spesifik dibandingkan kelas atau elemen. ID Selector biasanya ditandai dengan simbol tagar #.
+(2) Class Selector, diterapkan berdasarkan kelas. Umumnya ditandai dengan awalan simbol titik.
+(3) Tag selector, merupakan style pada HTML yang bersifat umum dan tidak spesifik, seperti p, h1, div.
  
-2. Jelaskan cara kerja penghubungan model Product dengan User!
-User didefinisikan sebagai class dan Product didefinisikan sebagai atribut yang dimiliki user. Hal ini memiliki makna men-assign nilai Foreign Key ke setiap User dan setiap User bisa memiliki atribut Product yang berbeda-beda.
+2. Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+Responsive design penting dalam pengembangan aplikasi web karena user mengakses web dari berbagai perangkat, seperti handphone, ipad, atau komputer dengan ukuran layar yang berbeda. Tanpa responsive design, tampilan sebuah website bisa menjadi berantakan di layar kecil atau besar, membuat pengguna sulit untuk membaca konten atau menggunakan fitur yang ada. Contoh aplikasi yang telah menerapkan responsive design: Linkedin. Contoh aplikasi yang belum menerapkan responsive design: GoJek (apabila dibuka di tablet, layout tetap memakai template handphone).
 
-3. Apa perbedaan antara authentication dan authorization, apakah yang dilakukan saat pengguna login? Jelaskan bagaimana Django mengimplementasikan kedua konsep tersebut.
-Authentication adalah proses memverifikasi identitas user yang hendak login, sedangkan authorization adalah proses memberikan role tertentu kepada user untuk memberikan batasan akses terhadap suatu website. Saat pengguna login, pengguna melakukan authentication. Apabila valid, Django akan memproses data dari pengguna yang login untuk men-assignnya ke role tertentu secara spesifik, seperti Admin, Guest, atau role lainnya. Hal ini turut menjadi batasan terkait sejauh apa akses website yang dimiliki oleh user yang login. 
+3. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+- Margin adalah area kosong di sekitar border (transparan)
+- Border adalah garis tepian yang mengelilingi konten dan paddingnya
+- Padding adalah area kosong di sekitar konten (transparan)
+Salah satu cara untuk mengimplementasikannya dapat dilihat pada code berikut ini:
+.element {
+  margin: 20px;  /* Jarak elemen dari elemen lainnya */
+  border: 2px solid black;  /* Border dengan ketebalan 2px dan warna hitam */
+  padding: 15px;  /* Jarak antara konten elemen dan bordernya */
+}
  
-4. Bagaimana Django mengingat pengguna yang telah login? Jelaskan kegunaan lain dari cookies dan apakah semua cookies aman digunakan?
-Django dapat mengingat pengguna yang telah login dengan menggunakan cookie. Cookie memiliki session ID yang dapat dianggap sebagai token untuk menyimpan session yang unik pada aplikasi web tertentu. Session ID kemudian dipetakan ke suatu struktur data pada sisi web server. Cookie sendiri terbagi menjadi 2, yakni session cookie yang bersifat lebih temporary dan persistent cookie yang mampu menyimpan data dalam durasi yang lebih lama. Kegunaan lain dari cookie meliputi: (1) user tracking, yakni bisa melacak aktivitas user; (2) pelacakan preferensi user, yakni kecenderungan hal yang disukai/dipilih user dalam website; (3) penyimpanan status aplikasi, seperti progres/update/aktivitas terakhir yang dilakukan user pada website tersebut.
+4. Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+Flexbox (Flexible Box Layout) adalah cara untuk mengatur tata letak elemen di web yang memberikan kemudahan untuk mengatur dan merapikan elemen dalam satu baris atau kolom. Dengan Flexbox, kita dapat menyusun elemen secara horizontal atau vertikal dengan mudah serta mengatur ruang di antara elemen secara otomatis. Sebagai contoh, kita dapat mengatur elemen-elemen agar rata di tengah, ke kiri, atau ke kanan.
 
-5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-Step 1: membuat fungsi dan form registrasi dengan cara mengimplementasikan fungsi bawaan dari Django.
-Step 2: membuat fitur authentication yang meliputi log-in, log-out, dan sign-up.
-Step 3: menambahkan restriksi yang memastikan user harus log-in sebelum bisa mengakses page website.
-Step 4: menambahkan cookies untuk mencatat data user yang log-in dan log-out.
-Step 5: menghubungkan product dengan user sehingga setiap user bisa memiliki product yang unik.
-
+Sementara itu, Grid Layout adalah metode yang memungkinkan untuk membuat desain yang lebih kompleks dengan menggunakan baris dan kolom. Grid cocok untuk mengatur elemen dalam format yang lebih terstruktur sehingga  bisa menciptakan tata letak yang rumit dan sesuai dengan keinginan. Dengan Grid, kita bisa menentukan ukuran dan posisi elemen dengan lebih tepat, cocok untuk penggunaan responsif. 
+ 
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+(1) Menambahkan Bootstrap ke aplikasi
+(2) Menambahkan fitur edit product dan memunculkannya pada button dengan cara membuat fungsi baru di views.py, ditambahkan ke urls.py, dan menambahkan button pada main.html
+(3) Menambahkan fitur hapus product dan memunculkannya pada button dengan cara membuat fungsi baru di views.py, ditambahkan ke urls.py, dan menambahkan button pada main.html
+(4) Menambahkan navbar pada aplikasi
+(5) Mengonfigurasi static file pada aplikasi
+(6) Menambahkan styles pada aplikasi dengan cara memodifikasi base.html terlebih dahulu untuk menambahkan script Tailwind kemudian menambahkan custom style di global.css

@@ -1,0 +1,99 @@
+<div class="relative break-inside-avoid mb-6">
+  <div class="relative bg-white shadow-lg transition-transform duration-300 hover:shadow-xl rounded-lg calendar-card">
+      <!-- Calendar-like top section with the product name -->
+      <div class="bg-indigo-600 text-white p-2 rounded-t-lg mb-2 text-center">
+          <h3 class="font-bold text-xl">{{ product_entry.name }}</h3>
+      </div>
+      <div class="border-t border-gray-300">
+          <!-- Price section styled like a calendar entry -->
+          <div class="flex justify-between items-center p-2 bg-indigo-200 rounded-t-lg">
+              <span class="text-gray-800 font-semibold">Price:</span>
+              <span class="text-gray-800 font-bold">{{ product_entry.price }}</span>
+          </div>
+          <!-- Description section -->
+          <div class="flex justify-between items-center p-2">
+              <span class="text-gray-700 font-semibold">Description:</span>
+          </div>
+          <div class="p-2 text-gray-600">{{ product_entry.description }}</div>
+          <!-- Intensity bar -->
+          <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-200">
+              {% if product_entry.product_intensity > 10 %}
+              <div style="width:100%" class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"></div>
+              {% else %}
+              <div class="flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500 {% if mood_entry.mood_intensity > 10 %}w-full{% else %}w-0{% endif %}"></div>
+              {% endif %}
+          </div>
+      </div>
+      <!-- Action buttons (Edit and Delete) at the bottom -->
+      <div class="flex justify-between p-2">
+          <a href="{% url 'main:edit_product' product_entry.pk %}" class="bg-yellow-500 hover:bg-yellow-600 text-white rounded p-2 transition duration-300 shadow-md flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+              </svg>
+              Edit
+          </a>
+          <a href="{% url 'main:delete_product' product_entry.pk %}" class="bg-red-500 hover:bg-red-600 text-white rounded p-2 transition duration-300 shadow-md flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+              </svg>
+              Delete
+          </a>
+      </div>
+  </div>
+</div>
+
+<style>
+  .calendar-card {
+      border-radius: 8px; /* Rounded corners for soft edges */
+      overflow: hidden; /* Ensures no overflow issues */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+      transition: box-shadow 0.3s ease-in-out; /* Smooth transition on hover */
+  }
+
+  .calendar-card:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+
+  .calendar-card h3 {
+      margin: 0; /* No extra space at the top */
+      text-align: center; /* Align the product name centrally */
+      font-size: 1.25rem; /* Increase font size for better readability */
+      font-weight: bold; /* Make the title stand out */
+  }
+
+  .calendar-card p {
+      margin: 0; /* Removes unnecessary margins */
+      font-size: 1rem; /* Sets the base font size */
+  }
+
+  .calendar-card .bg-indigo-600 {
+      padding: 12px; /* Adds padding for breathing space */
+      border-top-left-radius: 8px; /* Calendar-like rounded edges at the top */
+      border-top-right-radius: 8px;
+  }
+
+  .calendar-card .bg-indigo-200 {
+      padding: 8px; /* Padding inside the price container */
+  }
+
+  .calendar-card a {
+      padding: 0.5rem; /* Ensures consistent padding for buttons */
+      display: inline-flex; /* Aligns icon and text */
+      align-items: center; /* Centers icons within buttons */
+      justify-content: center; /* Centers text and icons */
+      gap: 0.5rem; /* Adds space between icon and text */
+      text-decoration: none; /* Removes underline */
+      font-size: 1rem; /* Sets the base font size for buttons */
+      transition: background-color 0.2s; /* Smooth background-color change */
+  }
+
+  .calendar-card a svg {
+      height: 1.25rem; /* Sets icon size */
+      width: 1.25rem;
+  }
+
+  .calendar-card .bg-yellow-500:hover,
+  .calendar-card .bg-red-500:hover {
+      transform: translateY(-2px); /* Slight lift on hover */
+  }
+</style>
