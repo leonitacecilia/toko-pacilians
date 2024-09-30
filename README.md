@@ -10,14 +10,15 @@ Tautan menuju PWS: http://pbp.cs.ui.ac.id/leonita.cecilia/tokopacilians
 Jawaban Pertanyaan:
 1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 Urutan prioritas pengambilan CSS selector dari yang paling tinggi hingga paling rendah adalah:
-(1) ID Selector. Hal ini dikarenakan ID selector bersifat unik, lebih spesifik dibandingkan kelas atau elemen. ID Selector biasanya ditandai dengan simbol tagar #.
-(2) Class Selector, diterapkan berdasarkan kelas. Umumnya ditandai dengan awalan simbol titik.
-(3) Tag selector, merupakan style pada HTML yang bersifat umum dan tidak spesifik, seperti p, h1, div.
+(1) Inline style, yakni style yang didefinisikan di dalam style tag. contoh: <h1 class="class1" style="color: red;" id="title1">HTML5 Example Page</h1> akan menampilkan warna merah.
+(2) ID Selector. Hal ini dikarenakan ID selector bersifat unik, lebih spesifik dibandingkan kelas atau elemen. ID Selector biasanya ditandai dengan simbol tagar #.
+(3) Class Selector, diterapkan berdasarkan kelas. Umumnya ditandai dengan awalan simbol titik.
+(4) Tag selector, merupakan style pada HTML yang bersifat umum dan tidak spesifik, seperti p, h1, div.
  
-2. Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+3. Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
 Responsive design penting dalam pengembangan aplikasi web karena user mengakses web dari berbagai perangkat, seperti handphone, ipad, atau komputer dengan ukuran layar yang berbeda. Tanpa responsive design, tampilan sebuah website bisa menjadi berantakan di layar kecil atau besar, membuat pengguna sulit untuk membaca konten atau menggunakan fitur yang ada. Contoh aplikasi yang telah menerapkan responsive design: Linkedin. Contoh aplikasi yang belum menerapkan responsive design: GoJek (apabila dibuka di tablet, layout tetap memakai template handphone).
 
-3. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+4. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
 - Margin adalah area kosong di sekitar border (transparan)
 - Border adalah garis tepian yang mengelilingi konten dan paddingnya
 - Padding adalah area kosong di sekitar konten (transparan)
