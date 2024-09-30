@@ -10,7 +10,7 @@ Tautan menuju PWS: http://pbp.cs.ui.ac.id/leonita.cecilia/tokopacilians
 Jawaban Pertanyaan:
 1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
 Urutan prioritas pengambilan CSS selector dari yang paling tinggi hingga paling rendah adalah:
-(1) Inline style, yakni style yang didefinisikan di dalam style tag. contoh: <h1 class="class1" style="color: red;" id="title1">HTML5 Example Page</h1> akan menampilkan warna merah.
+(1) Inline style, yakni style yang didefinisikan di dalam style tag. contoh: "<h1 class="class1" style="color: red;" id="title1">HTML5 Example Page</h1>" akan menampilkan warna merah.
 (2) ID Selector. Hal ini dikarenakan ID selector bersifat unik, lebih spesifik dibandingkan kelas atau elemen. ID Selector biasanya ditandai dengan simbol tagar #.
 (3) Class Selector, diterapkan berdasarkan kelas. Umumnya ditandai dengan awalan simbol titik.
 (4) Tag selector, merupakan style pada HTML yang bersifat umum dan tidak spesifik, seperti p, h1, div.
