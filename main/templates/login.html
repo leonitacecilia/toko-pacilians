@@ -9,29 +9,29 @@
   <div class="max-w-lg w-full space-y-10">
     <div class="text-center">
       <h1 class="text-4xl font-extrabold text-gray-900">Welcome Back!</h1>
-      <p class="mt-4 text-lg text-gray-500">Login to access your account</p>
+      <p class="mt-4 text-lg text-gray-600">Login to access your account</p>
     </div>
     <form class="space-y-8" method="POST" action="">
       {% csrf_token %}
-      <div class="rounded-lg shadow-md p-6 bg-gray-50 space-y-6">
+      <div class="rounded-lg shadow-md p-6 bg-white space-y-6">
         <div>
-          <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-          <input id="username" name="username" type="text" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter your username">
+          <label for="username" class="block text-sm font-medium text-gray-800">Username</label>
+          <input id="username" name="username" type="text" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Enter your username">
         </div>
         <div>
-          <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-          <input id="password" name="password" type="password" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Enter your password">
+          <label for="password" class="block text-sm font-medium text-gray-800">Password</label>
+          <input id="password" name="password" type="password" required class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm text-gray-900 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm" placeholder="Enter your password">
         </div>
       </div>
       
       <div class="flex items-center justify-between">
         <div class="text-sm">
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>
+          <a href="#" class="font-medium text-green-600 hover:text-green-500">Forgot your password?</a>
         </div>
       </div>
       
       <div>
-        <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-lg">
+        <button type="submit" class="w-full flex justify-center py-3 px-6 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 shadow-lg">
           Sign in
         </button>
       </div>
@@ -60,7 +60,7 @@
     <div class="text-center mt-8">
       <p class="text-sm text-gray-700">
         Don’t have an account yet?
-        <a href="{% url 'main:register' %}" class="font-medium text-indigo-600 hover:text-indigo-500">
+        <a href="{% url 'main:register' %}" class="font-medium text-green-600 hover:text-green-500">
           Register Now
         </a>
       </p>

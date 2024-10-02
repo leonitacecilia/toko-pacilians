@@ -7,8 +7,28 @@
     {% block meta %} {% endblock meta %}
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
+    <style>
+      /* Custom Tailwind overrides */
+      @layer utilities {
+        .bg-primary {
+          background-color: #16a34a; /* green-600 */
+        }
+        .hover\\:bg-primary:hover {
+          background-color: #15803d; /* green-700 */
+        }
+        .text-primary {
+          color: #16a34a; /* green-600 */
+        }
+        .hover\\:text-primary:hover {
+          color: #15803d; /* green-700 */
+        }
+        .focus\\:ring-primary:focus {
+          box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.5); /* green focus ring */
+        }
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-primary text-black">
     {% block content %} {% endblock content %}
   </body>
 </html>
