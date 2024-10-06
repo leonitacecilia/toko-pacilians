@@ -1,4 +1,4 @@
-TUGAS 5 Pemograman Berbasis Platform (PBP)
+TUGAS 6 Pemograman Berbasis Platform (PBP)
 
 Nama: Leonita Cecilia
 NPM: 2306165710
@@ -8,36 +8,24 @@ Kode Asdos: RZ
 Tautan menuju PWS: http://pbp.cs.ui.ac.id/leonita.cecilia/tokopacilians
 
 Jawaban Pertanyaan:
-1. Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
-Urutan prioritas pengambilan CSS selector dari yang paling tinggi hingga paling rendah adalah:
-(1) Inline style, yakni style yang didefinisikan di dalam style tag. contoh: style="color: red;" akan menampilkan warna merah.
-(2) ID Selector. Hal ini dikarenakan ID selector bersifat unik, lebih spesifik dibandingkan kelas atau elemen. ID Selector biasanya ditandai dengan simbol tagar #.
-(3) Class Selector, diterapkan berdasarkan kelas. Umumnya ditandai dengan awalan simbol titik.
-(4) Tag selector, merupakan style pada HTML yang bersifat umum dan tidak spesifik, seperti p, h1, div.
- 
-3. Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
-Responsive design penting dalam pengembangan aplikasi web karena user mengakses web dari berbagai perangkat, seperti handphone, ipad, atau komputer dengan ukuran layar yang berbeda. Tanpa responsive design, tampilan sebuah website bisa menjadi berantakan di layar kecil atau besar, membuat pengguna sulit untuk membaca konten atau menggunakan fitur yang ada. Contoh aplikasi yang telah menerapkan responsive design: Linkedin. Contoh aplikasi yang belum menerapkan responsive design: GoJek (apabila dibuka di tablet, layout tetap memakai template handphone).
+1. Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+Penggunaan JavaScript dalam pengembangan aplikasi web bermanfaat untuk membuat halaman web menjadi dinamis dan interaktif sehingga meningkatkan pengalaman pengguna. JavaScript memungkinkan perubahan konten secara langsung tanpa harus memuat ulang halaman, seperti menampilkan informasi berdasarkan waktu dan melakukan validasi form. Selain itu, JavaScript dapat digunakan untuk mengubah elemen visual secara real-time (seperti CSS). JavaScript juga membantu meringankan beban server karena sebagian besar eksekusi dilakukan di browser pengguna.
 
-4. Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
-- Margin adalah area kosong di sekitar border (transparan)
-- Border adalah garis tepian yang mengelilingi konten dan paddingnya
-- Padding adalah area kosong di sekitar konten (transparan)
-Salah satu cara untuk mengimplementasikannya dapat dilihat pada code berikut ini:
-.element {
-  margin: 20px;  /* Jarak elemen dari elemen lainnya */
-  border: 2px solid black;  /* Border dengan ketebalan 2px dan warna hitam */
-  padding: 15px;  /* Jarak antara konten elemen dan bordernya */
-}
+2. Jelaskan fungsi dari penggunaan await ketika kita menggunakan fetch()! Apa yang akan terjadi jika kita tidak menggunakan await?
+Penggunaan await saat menggunakan fetch() memungkinkan kita untuk menunggu hingga promise yang dihasilkan oleh fetch() teratasi sebelum melanjutkan eksekusi kode. Hal ini berarti kita dapat langsung bekerja dengan data yang diambil tanpa perlu menggunakan .then(). Jika kita tidak menggunakan await, kode akan terus dieksekusi tanpa menunggu respons dari fetch(), yang dapat mengakibatkan error atau nilai undefined saat mencoba mengakses data yang belum tersedia.
  
-4. Jelaskan konsep flex box dan grid layout beserta kegunaannya!
-Flexbox (Flexible Box Layout) adalah cara untuk mengatur tata letak elemen di web yang memberikan kemudahan untuk mengatur dan merapikan elemen dalam satu baris atau kolom. Dengan Flexbox, kita dapat menyusun elemen secara horizontal atau vertikal dengan mudah serta mengatur ruang di antara elemen secara otomatis. Sebagai contoh, kita dapat mengatur elemen-elemen agar rata di tengah, ke kiri, atau ke kanan.
+3. Mengapa kita perlu menggunakan decorator csrf_exempt pada view yang akan digunakan untuk AJAX POST?
+Penggunaan decorator "csrf_exempt" pada view yang digunakan untuk AJAX POST diperlukan karena AJAX requests sering kali tidak menyertakan CSRF token, yang dapat menyebabkan error 403 Forbidden jika tidak ada token yang valid. Dengan menambahkan "@csrf_exempt", pengecekan token CSRF untuk permintaan tersebut diabaikan, memungkinkan permintaan POST diproses tanpa memerlukan token. Hal ini memudahkan integrasi AJAX dalam aplikasi web dan memastikan bahwa permintaan dapat diproses meskipun token CSRF tidak disertakan.
+ 
+4. Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+Pembersihan data di backend tetap diperlukan meskipun kita menggunakan library JavaScript seperti DOMPurify di frontend karena DOMPurify hanya membersihkan data yang akan ditampilkan dalam format HTML di aplikasi kita. Jika aplikasi kita menyediakan API dalam format lain seperti JSON atau XML, data yang dikirim melalui API tersebut tidak akan dibersihkan oleh DOMPurify, sehingga data yang "kotor" masih bisa diakses. Oleh karena itu, pembersihan di backend diperlukan untuk memastikan semua data yang disimpan dan diproses, baik melalui HTML maupun API, selalu aman dan bersih dari potensi serangan atau input berbahaya.
 
-Sementara itu, Grid Layout adalah metode yang memungkinkan untuk membuat desain yang lebih kompleks dengan menggunakan baris dan kolom. Grid cocok untuk mengatur elemen dalam format yang lebih terstruktur sehingga  bisa menciptakan tata letak yang rumit dan sesuai dengan keinginan. Dengan Grid, kita bisa menentukan ukuran dan posisi elemen dengan lebih tepat, cocok untuk penggunaan responsif. 
- 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
-(1) Menambahkan Bootstrap ke aplikasi
-(2) Menambahkan fitur edit product dan memunculkannya pada button dengan cara membuat fungsi baru di views.py, ditambahkan ke urls.py, dan menambahkan button pada main.html
-(3) Menambahkan fitur hapus product dan memunculkannya pada button dengan cara membuat fungsi baru di views.py, ditambahkan ke urls.py, dan menambahkan button pada main.html
-(4) Menambahkan navbar pada aplikasi
-(5) Mengonfigurasi static file pada aplikasi
-(6) Menambahkan styles pada aplikasi dengan cara memodifikasi base.html terlebih dahulu untuk menambahkan script Tailwind kemudian menambahkan custom style di global.css
+a. Menambahkan pesan error saat pengguna gagal login.
+b. Mengimplementasikan fungsi untuk menambahkan mood menggunakan AJAX serta mengatur routing untuk mendukung fungsi AJAX tersebut.
+c. Menambahkan data entry produk ke dalam aplikasi menggunakan fetch() API secara asinkronus.
+d. Mengintegrasikan fungsi refreshProductEntries untuk memperbarui data produk secara otomatis tanpa harus memuat ulang halaman.
+e. Membuat modal sebagai form untuk memfasilitasi penambahan mood dengan tampilan yang lebih interaktif.
+f. Menggunakan AJAX untuk menambahkan data produk ke dalam aplikasi secara dinamis dan cepat.
+g. Melindungi aplikasi dari serangan XSS dengan menambahkan fitur sanitasi input melalui penggunaan fungsi strip_tags.
+h. Membersihkan data yang diambil dari input pengguna dengan menggunakan DOMPurify untuk mencegah penyalahgunaan kode berbahaya.

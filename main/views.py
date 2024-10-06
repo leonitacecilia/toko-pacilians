@@ -11,12 +11,15 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+from django.utils.html import strip_tags
 
 
 @login_required(login_url='/login')
 def show_main(request):
-    product_entries = Product.objects.filter(user=request.user)
-
+    data = Product.objects.filter(user=request.user)
+    
     # Use .get() to handle cases where 'last_login' cookie doesn't exist
     last_login = request.COOKIES.get('last_login', 'Belum login baru-baru ini')
 
@@ -26,7 +29,6 @@ def show_main(request):
         'kelas': 'PBP A',
         'harga': 'Rp22.000/kg',
         'deskripsi': 'Sebagai buah khas Indonesia, Mangga Harum Manis dikenal sebagai buah yang disukai banyak orang karena rasanya yang manis. Namun ternyata, tidak hanya rasanya yang manis, Mangga Harum Manis juga mengandung sejumlah nutrisi penting bagi tubuh, lho! Nutrisi secara lengkapnya dapat dilihat pada tabel berikut ini ya, teman-teman!',
-        'product_entries': product_entries,
         'last_login': last_login, 
     }
 
@@ -84,6 +86,8 @@ def login_user(request):
         response = HttpResponseRedirect(reverse("main:show_main"))
         response.set_cookie('last_login', str(datetime.datetime.now()))
         return response
+      else:
+          messages.error(request, "Invalid username or password. Please try again.")
 
    else:
       form = AuthenticationForm(request)
@@ -119,3 +123,23 @@ def delete_product(request, id):
     product.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
+
+@csrf_exempt
+@require_POST
+def add_product_entry_ajax(request):
+    name = strip_tags(request.POST.get("name")) # strip HTML tags!
+    price = strip_tags(request.POST.get("price")) # strip HTML tags!
+    description = strip_tags(request.POST.get("description")) # strip HTML tags!
+    name = request.POST.get("name")
+    price = request.POST.get("price")
+    description = request.POST.get("description")
+    user = request.user
+
+    new_product = Product(
+        name=name, price=price,
+        description=description,
+        user=user
+    )
+    new_product.save()
+
+    return HttpResponse(b"CREATED", status=201)
